@@ -904,3 +904,13 @@ textarea {
     width: 100%;
   }
 }
+
+@media (max-width: 900px) {
+  .order-options {
+    grid-template-columns: 1fr;
+  }
+
+  .order-card {
+    width: 100%;
+  }
+}
