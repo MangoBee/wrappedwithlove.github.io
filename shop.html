@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ready-to-Order Designs | Wrapped With Love</title>
+  <meta name="description" content="Ready-to-order floral designs from Wrapped With Love Florist." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a href="index.html#home" class="logo">Wrapped With Love</a>
+
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+<nav class="site-nav">
+  <a href="index.html#gallery">Gallery</a>
+  <a href="index.html#order-options">Order Options</a>
+  <a href="index.html#request">Custom Request</a>
+  <a href="shop.html">Ready-to-Order</a>
+  <a href="subscriptions.html">Subscriptions</a>
+  <a href="index.html#about">About</a>
+  <a href="index.html#contact">Contact</a>
+</nav>
+  </header>
+
+  <main>
+    <section class="shop-hero section">
+      <div>
+        <p class="eyebrow">Ready-to-order</p>
+        <h1>Floral designs you can request again.</h1>
+        <p class="hero-text">
+          Choose from previous designs and standard arrangements. Availability may vary based on flowers in season.
+        </p>
+      </div>
+    </section>
+
+    <section class="section shop-section">
+      <div class="section-heading">
+        <p class="eyebrow">Available styles</p>
+        <h2>Ready-to-order designs</h2>
+      </div>
+
+      <div class="shop-list">
+        <article class="shop-card">
+          <img src="images/shop-1.jpg" alt="Romantic bouquet design" />
+
+          <div class="shop-card-content">
+            <p class="shop-tag">Bouquet</p>
+            <h3>Romantic Blush Bouquet</h3>
+            <p>Soft pink and white florals arranged for birthdays, anniversaries, or thoughtful gifts.</p>
+            <p class="shop-price">$XX starting price</p>
+          </div>
+
+          <button class="btn btn-primary shop-request-button" data-design="Romantic Blush Bouquet">
+            Request This Design
+          </button>
+        </article>
+
+        <article class="shop-card">
+          <img src="images/shop-2.jpg" alt="Prom corsage design" />
+
+          <div class="shop-card-content">
+            <p class="shop-tag">Prom</p>
+            <h3>Classic Prom Corsage</h3>
+            <p>A delicate wrist corsage made with soft florals and ribbon details.</p>
+            <p class="shop-price">$XX starting price</p>
+          </div>
+
+          <button class="btn btn-primary shop-request-button" data-design="Classic Prom Corsage">
+            Request This Design
+          </button>
+        </article>
+
+        <article class="shop-card">
+          <img src="images/shop-3.jpg" alt="Boutonnière design" />
+
+          <div class="shop-card-content">
+            <p class="shop-tag">Boutonnière</p>
+            <h3>Matching Boutonnière</h3>
+            <p>A clean floral accent made to pair with prom, wedding, or event colors.</p>
+            <p class="shop-price">$XX starting price</p>
+          </div>
+
+          <button class="btn btn-primary shop-request-button" data-design="Matching Boutonnière">
+            Request This Design
+          </button>
+        </article>
+
+        <article class="shop-card">
+          <img src="images/shop-4.jpg" alt="Neutral arrangement design" />
+
+          <div class="shop-card-content">
+            <p class="shop-tag">Arrangement</p>
+            <h3>Neutral Garden Arrangement</h3>
+            <p>Soft neutral flowers arranged in a vase-style design for home, office, or gifting.</p>
+            <p class="shop-price">$XX starting price</p>
+          </div>
+
+          <button class="btn btn-primary shop-request-button" data-design="Neutral Garden Arrangement">
+            Request This Design
+          </button>
+        </article>
+
+        <article class="shop-card">
+          <img src="images/shop-5.jpg" alt="Bright bouquet design" />
+
+          <div class="shop-card-content">
+            <p class="shop-tag">Bouquet</p>
+            <h3>Bright Seasonal Bouquet</h3>
+            <p>A cheerful floral mix using seasonal colors and blooms.</p>
+            <p class="shop-price">$XX starting price</p>
+          </div>
+
+          <button class="btn btn-primary shop-request-button" data-design="Bright Seasonal Bouquet">
+            Request This Design
+          </button>
+        </article>
+
+        <article class="shop-card">
+          <img src="images/shop-6.jpg" alt="Event table arrangement design" />
+
+          <div class="shop-card-content">
+            <p class="shop-tag">Event</p>
+            <h3>Small Event Centerpiece</h3>
+            <p>A simple centerpiece option for showers, dinners, celebrations, or small gatherings.</p>
+            <p class="shop-price">$XX starting price</p>
+          </div>
+
+          <button class="btn btn-primary shop-request-button" data-design="Small Event Centerpiece">
+            Request This Design
+          </button>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Wrapped With Love Florist. All rights reserved.</p>
+  </footer>
+
+  <div id="shopModal" class="modal">
+    <div class="modal-content shop-modal-content">
+      <button class="modal-close" id="closeShopModal">&times;</button>
+
+      <h3>Request this design</h3>
+      <p class="selected-design-text">
+        Selected design: <strong id="selectedDesignName"></strong>
+      </p>
+
+      <form 
+        class="shop-request-form"
+        action="https://formspree.io/f/mvzlpdjd"
+        method="POST"
+      >
+        <input type="hidden" name="selected-design" id="selectedDesignInput" />
+
+        <label>
+          Name
+          <input type="text" name="name" placeholder="Your name" required autocomplete="name" />
+        </label>
+
+        <label>
+          Phone, email, or Instagram
+          <input type="text" name="contact" placeholder="Phone, email, or @username" required />
+        </label>
+
+        <label>
+          Date needed
+          <input type="date" name="date-needed" required />
+        </label>
+
+        <label>
+          Pickup or delivery
+          <select name="delivery">
+            <option>Pickup</option>
+            <option>Delivery</option>
+            <option>Not sure yet</option>
+          </select>
+        </label>
+
+        <label>
+          Notes
+          <textarea name="message" rows="4" placeholder="Any color changes, ribbon preference, address, or details?"></textarea>
+        </label>
+
+        <input type="hidden" name="_subject" value="New Ready-to-Order Design Request 🌸">
+
+        <button type="submit" class="btn btn-primary">Send Request</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="successModal" class="modal">
+    <div class="modal-content">
+      <button class="modal-close" id="closeModal">&times;</button>
+
+      <h3>Thank you for your request!</h3>
+      <p>
+        I will be in contact with you soon. Please look out for my email within the next 24 hours.
+      </p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

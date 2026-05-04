@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wrapped With Love Florist</title>
+  <meta name="description" content="Custom floral arrangements made to order for birthdays, prom, corsages, boutonnières, sympathy flowers, and special events." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a href="#home" class="logo">Wrapped With Love</a>
+
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+<nav class="site-nav">
+  <a href="index.html#gallery">Gallery</a>
+  <a href="index.html#order-options">Order Options</a>
+  <a href="index.html#request">Custom Request</a>
+  <a href="shop.html">Ready-to-Order</a>
+  <a href="subscriptions.html">Subscriptions</a>
+  <a href="index.html#about">About</a>
+  <a href="index.html#contact">Contact</a>
+</nav>
+    
+  </header>
+
+  <main>
+    <section id="home" class="hero section">
+      <div class="hero-content">
+        <p class="eyebrow">Custom floral arrangements</p>
+        <h1>Flowers made with love, for every special moment.</h1>
+        <p class="hero-text">
+          Weddings, Events, Holidays, Bouquets, Corsages, Boutonnières, Prom Flowers, and custom arrangements made to order.
+        </p>
+        <div class="hero-actions">
+          <a href="#request" class="btn btn-primary">Request Flowers</a>
+          <a href="#gallery" class="btn btn-secondary">View Gallery</a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        
+        <div class="hero-slider" aria-label="Featured flower gallery">
+  <img
+    id="heroSliderImage"
+    src="images/hero-bouquet-1.jpg"
+    alt="Custom floral arrangement"
+  />
+
+  <button class="slider-zone slider-zone-left" type="button" aria-label="Previous image"></button>
+  <button class="slider-zone slider-zone-right" type="button" aria-label="Next image"></button>
+</div>
+
+
+        <div class="hero-note">
+          <span>Daily Delivery</span>
+          <small>DM or submit a request</small>
+        </div>
+      </div>
+    </section>
+
+    <section class="intro section">
+      <p>
+        Wrapped With Love creates personalized floral pieces based on your occasion, color preferences,
+        budget, and pickup or delivery needs.
+      </p>
+    </section>
+
+    <section id="gallery" class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Recent work</p>
+        <h2>Gallery</h2>
+      </div>
+
+      <div class="gallery-grid">
+        <article class="gallery-item">
+          <img src="images/gallery-1.jpg" alt="Custom bouquet example" />
+          <p>Romantic bouquet</p>
+        </article>
+        <article class="gallery-item">
+          <img src="images/gallery-2.jpg" alt="Corsage example" />
+          <p>Prom corsage</p>
+        </article>
+        <article class="gallery-item">
+          <img src="images/gallery-3.jpg" alt="Boutonnière example" />
+          <p>Boutonnière</p>
+        </article>
+        <article class="gallery-item">
+          <img src="images/gallery-4.jpg" alt="Event flowers example" />
+          <p>Special event</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="order-options" class="section soft-section">
+  <div class="section-heading">
+    <p class="eyebrow">Order options</p>
+    <h2>Choose how you’d like to order</h2>
+  </div>
+
+  <div class="order-options">
+    <article class="order-card">
+      <span>01</span>
+      <h3>Custom Arrangement</h3>
+      <p>
+        Share your occasion, colors, budget, and style. Each arrangement is made just for you.
+      </p>
+      <a href="#request" class="btn btn-primary">Request Custom Flowers</a>
+    </article>
+
+    <article class="order-card">
+      <span>02</span>
+      <h3>Ready-to-Order Designs</h3>
+      <p>
+        Choose from standard arrangements or previous designs that can be recreated with available flowers.
+      </p>
+<a href="shop.html" class="btn btn-primary">Browse Designs</a>
+    </article>
+
+    <article class="order-card">
+      <span>03</span>
+      <h3>Flower Subscriptions</h3>
+      <p>
+        Enjoy fresh flowers on a recurring monthly schedule for your home, office, or special someone.
+      </p>
+<a href="subscriptions.html" class="btn btn-primary">View Subscriptions</a>
+
+</article>
+  </div>
+</section>
+
+    <section id="request" class="section request-section">
+      <div class="section-heading">
+        <h2>Request an arrangement</h2>
+      </div>
+
+<form 
+  class="request-form" 
+  action="https://formspree.io/f/mvzlpdjd" 
+  method="POST"
+>
+        <div class="form-row">
+          <label>
+            Name
+            <input type="text" name="name" placeholder="Your name" required />
+          </label>
+
+          <label>
+            Phone or Instagram or Email
+            <input type="text" name="contact" placeholder="@username or phone number or email" required />
+          </label>
+        </div>
+
+        <div class="form-row">
+          <label>
+            Occasion
+            <select name="occasion" required>
+              <option value="">Select one</option>
+              <option>Birthday</option>
+              <option>Prom</option>
+              <option>Corsage</option>
+              <option>Boutonnière</option>
+              <option>Sympathy</option>
+              <option>Event</option>
+              <option>Other</option>
+            </select>
+          </label>
+
+          <label>
+            Date needed
+            <input type="date" name="date" required />
+          </label>
+        </div>
+
+        <div class="form-row">
+          <label>
+            Budget
+            <input type="text" name="budget" placeholder="" />
+          </label>
+
+          <label>
+            Pickup or delivery
+            <select name="delivery">
+              <option>Pickup</option>
+              <option>Delivery</option>
+              <option>Not sure yet</option>
+            </select>
+          </label>
+        </div>
+
+        <label>
+          Colors, style, and notes
+          <textarea name="message" rows="6" placeholder="Tell us what you have in mind..."></textarea>
+        </label>
+
+        <button type="submit" class="btn btn-primary">Send Request</button>
+
+
+<input type="hidden" name="_subject" value="New Flower Request 🌸">
+      </form>
+    </section>
+
+    <section id="about" class="section about-section">
+  <div class="about-image">
+    <img src="images/about-florist.jpg" alt="Florist holding a custom flower arrangement" />
+  </div>
+
+  <div class="about-content">
+    <p class="eyebrow">About the florist</p>
+    <h2>text here</h2>
+    <p>
+      Text here
+    </p>
+  </div>
+</section>
+
+    <section id="contact" class="section contact-section">
+      <div>
+        <p class="eyebrow">Contact</p>
+        <h2>Let’s make something beautiful.</h2>
+        <p>Follow or message on Instagram for custom floral requests.</p>
+      </div>
+
+      <a class="instagram-link" href="https://www.instagram.com/floristwrappedwithlove/" target="_blank" rel="noopener">
+        @FloristWrappedWithLove
+      </a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Wrapped With Love Florist. All rights reserved.</p>
+  </footer>
+
+ 
+
+  <div id="successModal" class="modal">
+  <div class="modal-content">
+    <button class="modal-close" id="closeModal">&times;</button>
+
+    <h3>Thank you for your request!</h3>
+    <p>
+      I will be in contact with you soon. Please look out for my email within the next 24 hours.
+    </p>
+  </div>
+</div>
+
+ <script src="script.js"></script>
+</body>
+</html>

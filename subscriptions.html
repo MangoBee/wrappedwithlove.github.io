@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flower Subscriptions | Wrapped With Love</title>
+  <meta name="description" content="Monthly flower subscriptions from Wrapped With Love Florist." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a href="index.html#home" class="logo">Wrapped With Love</a>
+
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+  <nav class="site-nav">
+  <a href="index.html#gallery">Gallery</a>
+  <a href="index.html#order-options">Order Options</a>
+  <a href="index.html#request">Custom Request</a>
+  <a href="shop.html">Ready-to-Order</a>
+  <a href="subscriptions.html">Subscriptions</a>
+  <a href="index.html#about">About</a>
+  <a href="index.html#contact">Contact</a>
+</nav>
+  </header>
+
+  <main>
+    <section class="subscription-hero section">
+      <div>
+        <p class="eyebrow">Monthly flowers</p>
+        <h1>Fresh flowers, delivered with love.</h1>
+        <p class="hero-text">
+          Choose a subscription plan for recurring floral arrangements made for your home,
+          office, or someone special.
+        </p>
+        <a href="#subscription-request" class="btn btn-primary">Request a Subscription</a>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Choose a plan</p>
+        <h2>Subscription tiers</h2>
+      </div>
+
+      <div class="subscription-plans">
+        <article class="subscription-card">
+          <p class="plan-label">Petite</p>
+          <h3>$XX / month</h3>
+          <p>Small seasonal arrangement, perfect for desks, bedrooms, or thoughtful gifts.</p>
+          <ul>
+            <li>Small arrangement</li>
+            <li>Seasonal flowers</li>
+            <li>Monthly pickup or delivery</li>
+          </ul>
+        <a href="#subscription-request" class="btn btn-primary plan-button" data-plan="Petite">Choose Petite</a>
+        </article>
+
+        <article class="subscription-card">
+          <p class="plan-label">Classic</p>
+          <h3>$XX / month</h3>
+          <p>Medium arrangement with fuller blooms, great for homes and offices.</p>
+          <ul>
+            <li>Medium arrangement</li>
+            <li>Seasonal color palette</li>
+            <li>Monthly pickup or delivery</li>
+          </ul>
+          <a href="#subscription-request" class="btn btn-primary plan-button" data-plan="Classic">Choose Classic</a>
+        </article>
+
+        <article class="subscription-card">
+          <p class="plan-label">Luxe</p>
+          <h3>$XX / month</h3>
+          <p>Premium arrangement with larger blooms and a fuller statement design.</p>
+          <ul>
+            <li>Large arrangement</li>
+            <li>Premium flower selection</li>
+            <li>Monthly pickup or delivery</li>
+          </ul>
+          <a href="#subscription-request" class="btn btn-primary plan-button" data-plan="Luxe">Choose Luxe</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section soft-section">
+      <div class="section-heading">
+        <p class="eyebrow">How it works</p>
+        <h2>Simple monthly flowers</h2>
+      </div>
+
+      <div class="steps">
+        <article>
+          <span>01</span>
+          <h3>Choose a plan</h3>
+          <p>Select the size and style that fits your space or gift needs.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h3>Send details</h3>
+          <p>Share delivery address, preferred colors, and any notes.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h3>Confirm monthly</h3>
+          <p>Wrapped With Love will confirm pricing, availability, and payment.</p>
+        </article>
+        <article>
+          <span>04</span>
+          <h3>Enjoy flowers</h3>
+          <p>Receive fresh flowers on a recurring schedule.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="subscription-request" class="section request-section">
+      <div class="section-heading">
+        <h2>Request a subscription</h2>
+      </div>
+
+      <form 
+        class="request-form" 
+        action="https://formspree.io/f/mvzlpdjd" 
+        method="POST"
+      >
+        <div class="form-row">
+          <label>
+            Name
+            <input type="text" name="name" placeholder="Your name" required autocomplete="name" />
+          </label>
+
+          <label>
+            Email
+            <input type="email" name="email" placeholder="you@example.com" required autocomplete="email" />
+          </label>
+        </div>
+
+        <div class="form-row">
+          <label>
+            Phone
+            <input type="tel" name="phone" placeholder="Phone number" autocomplete="tel" />
+          </label>
+
+          <label>
+            Preferred plan
+            <select name="plan" required>
+              <option value="">Select one</option>
+              <option>Petite</option>
+              <option>Classic</option>
+              <option>Luxe</option>
+              <option>Not sure yet</option>
+            </select>
+          </label>
+        </div>
+
+        <label>
+          Delivery address
+          <input type="text" name="address" placeholder="Street, city, state, ZIP" autocomplete="street-address" />
+        </label>
+
+        <div class="form-row">
+          <label>
+            Preferred start date
+            <input type="date" name="start-date" />
+          </label>
+
+          <label>
+            Pickup or delivery
+            <select name="delivery">
+              <option>Pickup</option>
+              <option>Delivery</option>
+              <option>Not sure yet</option>
+            </select>
+          </label>
+        </div>
+
+        <label>
+          Colors, style, and notes
+          <textarea name="message" rows="6" placeholder="Tell us what you have in mind..."></textarea>
+        </label>
+
+        <input type="hidden" name="_subject" value="New Flower Subscription Request 🌸">
+
+        <button type="submit" class="btn btn-primary">Send Subscription Request</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Wrapped With Love Florist. All rights reserved.</p>
+  </footer>
+
+  <div id="successModal" class="modal">
+    <div class="modal-content">
+      <button class="modal-close" id="closeModal">&times;</button>
+
+      <h3>Thank you for your request!</h3>
+      <p>
+        I will be in contact with you soon. Please look out for my email within the next 24 hours.
+      </p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
