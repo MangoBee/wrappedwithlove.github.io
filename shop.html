@@ -18,12 +18,14 @@
       <span></span>
     </button>
 
+
 <nav class="site-nav">
   <a href="index.html#gallery">Gallery</a>
-  <a href="index.html#order-options">Order Options</a>
-  <a href="index.html#request">Custom Request</a>
+    <a href="index.html#order-options">Order Options</a>
   <a href="shop.html">Ready-to-Order</a>
+<a href="#" class="custom-request-trigger">Custom Arrangements</a>
   <a href="subscriptions.html">Subscriptions</a>
+  <a href="index.html#request">Weddings & Events</a>
   <a href="index.html#about">About</a>
   <a href="index.html#contact">Contact</a>
 </nav>
@@ -206,6 +208,89 @@
       </p>
     </div>
   </div>
+
+<div id="customModal" class="modal">
+  <div class="modal-content custom-modal-content">
+    <button class="modal-close" id="closeCustomModal">&times;</button>
+
+    <h3>Request custom flowers</h3>
+
+    <form 
+      class="custom-request-form"
+      action="https://formspree.io/f/mvzlpdjd"
+      method="POST"
+    >
+      <div class="custom-form-grid">
+        <div class="form-column">
+          <label>
+            Name
+            <input type="text" name="name" placeholder="Enter Your Full Name" required autocomplete="name" />
+          </label>
+
+          <label>
+            Instagram
+            <input type="text" name="instagram" placeholder="@Username" />
+            <small class="field-note">Optional</small>
+          </label>
+
+          <label>
+            Delivery Location
+            <input type="text" name="delivery-location" placeholder="City or address" />
+          </label>
+
+          <label>
+            Colors, Style, Inspiration, etc.
+            <textarea name="style-inspiration" rows="5" placeholder="Tell us the colors, style, or inspiration..."></textarea>
+          </label>
+        </div>
+
+        <div class="form-column">
+          <label>
+            Phone Number
+            <input type="tel" name="phone" placeholder="E.g. (951) 902-4893" required autocomplete="tel" />
+          </label>
+
+          <label>
+            Occasion
+            <select name="occasion" required>
+              <option value="">Select One</option>
+              <option>Anniversary</option>
+              <option>Birthday</option>
+              <option>Sympathy</option>
+              <option>Prom</option>
+              <option>Holiday</option>
+              <option>New Baby</option>
+              <option>Other</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="form-column">
+          <label>
+            Email
+            <input type="email" name="email" placeholder="Enter Your Email" required autocomplete="email" />
+          </label>
+
+          <label>
+            Delivery Date
+            <input type="date" name="delivery-date" required />
+          </label>
+
+          <label>
+            Price Range
+            <input type="text" name="price-range" placeholder="$" />
+          </label>
+        </div>
+      </div>
+
+      <input type="hidden" name="_subject" value="New Custom Flower Request 🌸">
+
+      <button type="submit" class="btn btn-primary full-submit-button">
+        Send Request
+      </button>
+    </form>
+  </div>
+</div>
 
   <script src="script.js"></script>
 </body>

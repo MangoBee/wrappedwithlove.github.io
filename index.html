@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Wrapped With Love Florist</title>
+  <title>Florist Wrapped With Love</title>
   <meta name="description" content="Custom floral arrangements made to order for birthdays, prom, corsages, boutonnières, sympathy flowers, and special events." />
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌸</text></svg>">
 </head>
 <body>
   <header class="site-header">
-    <a href="#home" class="logo">Wrapped With Love</a>
+    <a href="#home" class="logo">Florist Wrapped With Love</a>
 
     <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
       <span></span>
@@ -18,12 +18,14 @@
       <span></span>
     </button>
 
+
 <nav class="site-nav">
   <a href="index.html#gallery">Gallery</a>
-  <a href="index.html#order-options">Order Options</a>
-  <a href="index.html#request">Custom Request</a>
+    <a href="index.html#order-options">Order Options</a>
   <a href="shop.html">Ready-to-Order</a>
+ <a href="#" class="custom-request-trigger">Custom Arrangements</a>
   <a href="subscriptions.html">Subscriptions</a>
+  <a href="index.html#request">Weddings & Events</a>
   <a href="index.html#about">About</a>
   <a href="index.html#contact">Contact</a>
 </nav>
@@ -33,13 +35,13 @@
   <main>
     <section id="home" class="hero section">
       <div class="hero-content">
-        <p class="eyebrow">Custom floral arrangements</p>
+        <p class="eyebrow">Your Personal Floral Designer</p>
         <h1>Flowers made with love, for every special moment.</h1>
         <p class="hero-text">
-          Weddings, Events, Holidays, Bouquets, Corsages, Boutonnières, Prom Flowers, and custom arrangements made to order.
+          Everyday Occasions, Seasonal Flowers, Holidays, Hand-tied Bouquets, Weddings, Events and Custom Arrangements.
         </p>
         <div class="hero-actions">
-          <a href="#request" class="btn btn-primary">Request Flowers</a>
+          <a href="#request" class="btn btn-primary">Weddings + Events</a>
           <a href="#gallery" class="btn btn-secondary">View Gallery</a>
         </div>
       </div>
@@ -59,41 +61,39 @@
 
 
         <div class="hero-note">
-          <span>Daily Delivery</span>
-          <small>DM or submit a request</small>
+          <span>Mother's Day Flowers</span>
+          <small>Submit a request</small>
         </div>
       </div>
     </section>
 
-    <section class="intro section">
-      <p>
-        Wrapped With Love creates personalized floral pieces based on your occasion, color preferences,
-        budget, and pickup or delivery needs.
-      </p>
-    </section>
-
+ 
     <section id="gallery" class="section">
       <div class="section-heading">
-        <p class="eyebrow">Recent work</p>
+        <p class="eyebrow">FEATURED DESIGNS</p>
         <h2>Gallery</h2>
       </div>
 
       <div class="gallery-grid">
         <article class="gallery-item">
           <img src="images/gallery-1.jpg" alt="Custom bouquet example" />
-          <p>Romantic bouquet</p>
+          <h4>Blushing Peony</h4>
+          <p>$175</p>
         </article>
         <article class="gallery-item">
           <img src="images/gallery-2.jpg" alt="Corsage example" />
-          <p>Prom corsage</p>
+          <h4>Peachy Spring</h4>
+          <p>$65</p>
         </article>
         <article class="gallery-item">
           <img src="images/gallery-3.jpg" alt="Boutonnière example" />
-          <p>Boutonnière</p>
+          <h4>Pretting in Pink</h4>
+          <p>$100</p>
         </article>
         <article class="gallery-item">
           <img src="images/gallery-4.jpg" alt="Event flowers example" />
-          <p>Special event</p>
+          <h4>Designer's Choice</h4>
+          <p>$125</p>
         </article>
       </div>
     </section>
@@ -107,20 +107,25 @@
   <div class="order-options">
     <article class="order-card">
       <span>01</span>
-      <h3>Custom Arrangement</h3>
+       <h3>Ready-to-Order Designs</h3>
       <p>
-        Share your occasion, colors, budget, and style. Each arrangement is made just for you.
+        Shop for all occasions. Choose from previous designs that can be recreated with availble flowers.
       </p>
-      <a href="#request" class="btn btn-primary">Request Custom Flowers</a>
+<a href="shop.html" class="btn btn-primary">Browse Designs</a>
+      
     </article>
 
     <article class="order-card">
       <span>02</span>
-      <h3>Ready-to-Order Designs</h3>
+<h3>Custom Arrangement</h3>
       <p>
-        Choose from standard arrangements or previous designs that can be recreated with available flowers.
+        Share your occasion, colors, price range, and style. Each arrangement is made just for you.
       </p>
-<a href="shop.html" class="btn btn-primary">Browse Designs</a>
+<button type="button" class="btn btn-primary custom-request-trigger">
+  Request Custom Flowers
+</button>
+
+     
     </article>
 
     <article class="order-card">
@@ -135,75 +140,91 @@
   </div>
 </section>
 
+   <section class="intro section">
+      <p>
+        A Studio Floral Designer dedicated to turning blooms into breathtaking arrangements. Florist Wrapped With Love transforms ordering moments into extraordinary memories.
+      </p>
+    </section>
+
+
     <section id="request" class="section request-section">
       <div class="section-heading">
-        <h2>Request an arrangement</h2>
+        <h2>Wedding and Special Event Inquiry Form</h2>
       </div>
 
 <form 
-  class="request-form" 
+  class="request-form event-request-form" 
   action="https://formspree.io/f/mvzlpdjd" 
   method="POST"
+  enctype="multipart/form-data"
 >
-        <div class="form-row">
-          <label>
-            Name
-            <input type="text" name="name" placeholder="Your name" required />
-          </label>
+  <div class="event-form-grid">
+    <div class="form-column">
+      <label>
+        Your Name
+        <input type="text" name="name" placeholder="Enter Your Full Name" required autocomplete="name" />
+      </label>
 
-          <label>
-            Phone or Instagram or Email
-            <input type="text" name="contact" placeholder="@username or phone number or email" required />
-          </label>
+      <label>
+        Phone Number
+        <input type="tel" name="phone" placeholder="E.g. (951) 902-4893" required autocomplete="tel" />
+      </label>
+
+      <label>
+        Event Date
+        <input type="date" name="event-date" required />
+      </label>
+
+      <label>
+        Aesthetic Ideas & Inspiration
+        <textarea name="aesthetic-ideas" rows="5" placeholder="Enter Color Palette, Style, and/or Pinterest Link"></textarea>
+      </label>
+
+      <label>
+        Request Floral Items
+        <textarea name="floral-items" rows="5" placeholder="Enter Centerpieces, Accent Arrangements, Floral Installations, etc."></textarea>
+      </label>
+    </div>
+
+    <div class="form-column">
+      <label>
+        Email Address
+        <input type="email" name="email" placeholder="Enter Your Email Address" required autocomplete="email" />
+      </label>
+
+      <label>
+        Estimated Floral Investment
+        <input type="text" name="estimated-investment" placeholder="$" />
+      </label>
+
+      <label>
+        Upload Inspiration Photos
+        <div class="file-upload-box">
+          <input 
+            type="file" 
+            id="inspirationPhotos" 
+            name="inspiration-photos" 
+            accept="image/*" 
+            multiple 
+          />
+          <span>Choose files to upload</span>
+          <small>PNG, JPG, or WEBP. Multiple files allowed.</small>
         </div>
+      </label>
 
-        <div class="form-row">
-          <label>
-            Occasion
-            <select name="occasion" required>
-              <option value="">Select one</option>
-              <option>Birthday</option>
-              <option>Prom</option>
-              <option>Corsage</option>
-              <option>Boutonnière</option>
-              <option>Sympathy</option>
-              <option>Event</option>
-              <option>Other</option>
-            </select>
-          </label>
+      <div id="fileList" class="file-list"></div>
 
-          <label>
-            Date needed
-            <input type="date" name="date" required />
-          </label>
-        </div>
+      <label>
+        Additional Detail
+        <textarea name="additional-details" rows="9" placeholder="Tell Us About Your Event!"></textarea>
+      </label>
+    </div>
+  </div>
 
-        <div class="form-row">
-          <label>
-            Budget
-            <input type="text" name="budget" placeholder="" />
-          </label>
+  <input type="hidden" name="_subject" value="New Wedding/Event Floral Request 🌸">
 
-          <label>
-            Pickup or delivery
-            <select name="delivery">
-              <option>Pickup</option>
-              <option>Delivery</option>
-              <option>Not sure yet</option>
-            </select>
-          </label>
-        </div>
-
-        <label>
-          Colors, style, and notes
-          <textarea name="message" rows="6" placeholder="Tell us what you have in mind..."></textarea>
-        </label>
-
-        <button type="submit" class="btn btn-primary">Send Request</button>
-
-
-<input type="hidden" name="_subject" value="New Flower Request 🌸">
-      </form>
+  <button type="submit" class="btn btn-primary full-submit-button">Send Request</button>
+</form>
     </section>
 
     <section id="about" class="section about-section">
@@ -224,12 +245,13 @@
       <div>
         <p class="eyebrow">Contact</p>
         <h2>Let’s make something beautiful.</h2>
-        <p>Follow or message on Instagram for custom floral requests.</p>
+        <p>Get Connected and Stay Updated for the latest events. Follow our instagram to request floral designs.</p>
       </div>
 
-      <a class="instagram-link" href="https://www.instagram.com/floristwrappedwithlove/" target="_blank" rel="noopener">
-        @FloristWrappedWithLove
-      </a>
+  <a class="instagram-link" href="https://www.instagram.com/floristwrappedwithlove/" target="_blank" rel="noopener">
+  <img src="images/insta.png" alt="Instagram" class="instagram-icon" />
+  <span>@FloristWrappedWithLove</span>
+</a>
     </section>
   </main>
 
@@ -247,6 +269,89 @@
     <p>
       I will be in contact with you soon. Please look out for my email within the next 24 hours.
     </p>
+  </div>
+</div>
+
+<div id="customModal" class="modal">
+  <div class="modal-content custom-modal-content">
+    <button class="modal-close" id="closeCustomModal">&times;</button>
+
+    <h3>Request custom flowers</h3>
+
+    <form 
+      class="custom-request-form"
+      action="https://formspree.io/f/mvzlpdjd"
+      method="POST"
+    >
+      <div class="custom-form-grid">
+        <div class="form-column">
+          <label>
+            Name
+            <input type="text" name="name" placeholder="Enter Your Full Name" required autocomplete="name" />
+          </label>
+
+          <label>
+            Instagram
+            <input type="text" name="instagram" placeholder="@Username" />
+            <small class="field-note">Optional</small>
+          </label>
+
+          <label>
+            Delivery Location
+            <input type="text" name="delivery-location" placeholder="City or address" />
+          </label>
+
+          <label>
+            Colors, Style, Inspiration, etc.
+            <textarea name="style-inspiration" rows="5" placeholder="Tell us the colors, style, or inspiration..."></textarea>
+          </label>
+        </div>
+
+        <div class="form-column">
+          <label>
+            Phone Number
+            <input type="tel" name="phone" placeholder="E.g. (951) 902-4893" required autocomplete="tel" />
+          </label>
+
+          <label>
+            Occasion
+            <select name="occasion" required>
+              <option value="">Select One</option>
+              <option>Anniversary</option>
+              <option>Birthday</option>
+              <option>Sympathy</option>
+              <option>Prom</option>
+              <option>Holiday</option>
+              <option>New Baby</option>
+              <option>Other</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="form-column">
+          <label>
+            Email
+            <input type="email" name="email" placeholder="Enter Your Email" required autocomplete="email" />
+          </label>
+
+          <label>
+            Delivery Date
+            <input type="date" name="delivery-date" required />
+          </label>
+
+          <label>
+            Price Range
+            <input type="text" name="price-range" placeholder="$" />
+          </label>
+        </div>
+      </div>
+
+      <input type="hidden" name="_subject" value="New Custom Flower Request 🌸">
+
+      <button type="submit" class="btn btn-primary full-submit-button">
+        Send Request
+      </button>
+    </form>
   </div>
 </div>
 

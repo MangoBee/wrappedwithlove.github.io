@@ -89,12 +89,73 @@ if (modal && closeModal) {
   });
 }
 
-// Main/subscription request form
+// Main/subscription request form + inspiration photo upload
 const form = document.querySelector(".request-form");
+const inspirationInput = document.getElementById("inspirationPhotos");
+const fileList = document.getElementById("fileList");
+
+let selectedFiles = [];
+
+function updateFileInput() {
+  if (!inspirationInput) return;
+
+  const dataTransfer = new DataTransfer();
+
+  selectedFiles.forEach((file) => {
+    dataTransfer.items.add(file);
+  });
+
+  inspirationInput.files = dataTransfer.files;
+}
+
+function renderFileList() {
+  if (!fileList) return;
+
+  fileList.innerHTML = "";
+
+  selectedFiles.forEach((file, index) => {
+    const fileItem = document.createElement("div");
+    fileItem.className = "file-item";
+
+    const preview = document.createElement("img");
+    preview.className = "file-preview";
+    preview.src = URL.createObjectURL(file);
+    preview.alt = file.name;
+
+    const fileName = document.createElement("span");
+    fileName.textContent = file.name;
+
+    const removeButton = document.createElement("button");
+    removeButton.type = "button";
+    removeButton.textContent = "Remove";
+
+    removeButton.addEventListener("click", () => {
+      selectedFiles.splice(index, 1);
+      updateFileInput();
+      renderFileList();
+    });
+
+    fileItem.appendChild(preview);
+    fileItem.appendChild(fileName);
+    fileItem.appendChild(removeButton);
+
+    fileList.appendChild(fileItem);
+  });
+}
+
+if (inspirationInput) {
+  inspirationInput.addEventListener("change", () => {
+    selectedFiles = [...selectedFiles, ...Array.from(inspirationInput.files)];
+    updateFileInput();
+    renderFileList();
+  });
+}
 
 if (form && modal) {
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
+
+    updateFileInput();
 
     const formData = new FormData(form);
 
@@ -184,6 +245,56 @@ if (
 
       if (response.ok) {
         shopModal.classList.remove("is-open");
+        modal.classList.add("is-open");
+      } else {
+        alert("Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      alert("Error submitting form.");
+    }
+  });
+}
+
+// Custom arrangement modal
+const customRequestTriggers = document.querySelectorAll(".custom-request-trigger");
+const customModal = document.getElementById("customModal");
+const closeCustomModal = document.getElementById("closeCustomModal");
+const customRequestForm = document.querySelector(".custom-request-form");
+
+if (customRequestTriggers.length > 0 && customModal && closeCustomModal && customRequestForm && modal) {
+  customRequestTriggers.forEach((trigger) => {
+    trigger.addEventListener("click", (e) => {
+      e.preventDefault();
+      customModal.classList.add("is-open");
+    });
+  });
+
+  closeCustomModal.addEventListener("click", () => {
+    customModal.classList.remove("is-open");
+  });
+
+  customModal.addEventListener("click", (e) => {
+    if (e.target === customModal) {
+      customModal.classList.remove("is-open");
+    }
+  });
+
+  customRequestForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(customRequestForm);
+
+    try {
+      const response = await fetch(customRequestForm.action, {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      if (response.ok) {
+        customModal.classList.remove("is-open");
         modal.classList.add("is-open");
       } else {
         alert("Something went wrong. Please try again.");

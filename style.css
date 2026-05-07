@@ -93,7 +93,7 @@ a {
 }
 
 .section {
-  padding: clamp(64px, 9vw, 120px) clamp(20px, 5vw, 70px);
+  padding: clamp(64px, 0vw, 120px) clamp(20px, 5vw, 70px);
 }
 
 .hero {
@@ -151,6 +151,7 @@ h3 {
   font-family: Arial, sans-serif;
   color: var(--muted);
   line-height: 1.7;
+  
 }
 
 .hero-actions {
@@ -210,8 +211,8 @@ h3 {
   position: absolute;
   left: -18px;
   bottom: 42px;
-  width: 138px;
-  height: 138px;
+  width: 150px;
+  height: 150px;
   padding: 18px;
   border-radius: 50%;
   background: var(--sage);
@@ -228,12 +229,14 @@ h3 {
 }
 
 .hero-note span {
-  max-width: 90px;
-  font-size: 1.3rem;
+  font-size: auto;
   line-height: 0.9;
   text-transform: uppercase;
+  margin-right: auto;
+  margin-left: auto;
   text-align: center;
   margin-bottom: 4px;
+  font-weight: bold;
 }
 
 .hero-note small {
@@ -245,8 +248,12 @@ h3 {
 
 .intro {
     padding: 20px clamp(20px, 5vw, 70px);
-
+  text-align: center;
   position: relative;
+}
+
+.contact-section h2 {
+  margin-bottom: 24px;
 }
 
 .intro p {
@@ -269,7 +276,7 @@ h3 {
   display: block;
   width: 100%;
   height: 2px;
-    margin: 0 auto 16px;
+    margin: 50px auto 16px;
 
   
   background: linear-gradient(
@@ -389,12 +396,16 @@ h3 {
 }
 
 .request-section {
-  max-width: 980px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
 .request-form {
   padding: clamp(22px, 4vw, 42px);
+}
+
+.request-section h2 {
+  text-align: center;
 }
 
 .form-row {
@@ -449,13 +460,145 @@ textarea {
 }
 
 .instagram-link {
-  display: inline-flex;
-  padding: 18px 24px;
-  border-radius: 999px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 220px;
+  min-height: 120px;
+  padding: 22px 26px;
+
+  border-radius: 28px;
   background: var(--paper);
   color: var(--ink);
+
   font-family: Arial, sans-serif;
   font-weight: 700;
+  text-align: center;
+
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.12);
+}
+
+.instagram-icon {
+width: 64px;
+height: 64px;
+  object-fit: contain;
+  margin-bottom: 12px;
+}
+
+.event-request-form {
+  width: 100%;
+}
+
+.event-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+}
+
+.form-column {
+  display: grid;
+  align-content: start;
+}
+
+.file-upload-box {
+  position: relative;
+  display: grid;
+  place-items: center;
+  gap: 8px;
+  min-height: 150px;
+  padding: 22px;
+  border: 2px dashed rgba(95, 104, 79, 0.28);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  cursor: pointer;
+}
+
+.file-upload-box input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.file-upload-box span {
+  font-family: Arial, sans-serif;
+  font-weight: 700;
+  color: var(--sage-dark);
+}
+
+.file-upload-box small {
+  font-family: Arial, sans-serif;
+  color: var(--muted);
+}
+
+.file-list {
+  display: grid;
+  gap: 8px;
+  margin: -4px 0 18px;
+}
+
+.file-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 14px;
+  background: rgba(174, 191, 130, 0.16);
+  font-family: Arial, sans-serif;
+  color: var(--muted);
+}
+
+.file-item button {
+  border: 0;
+  background: transparent;
+  color: var(--rose);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.full-submit-button {
+  width: 100%;
+  margin-top: 18px;
+}
+
+@media (max-width: 900px) {
+  .event-form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+.file-item {
+  display: grid;
+  grid-template-columns: 72px 1fr auto;
+  align-items: center;
+  gap: 14px;
+
+  padding: 12px;
+  border-radius: 18px;
+
+  background: rgba(174, 191, 130, 0.14);
+}
+
+.file-preview {
+  width: 72px;
+  height: 72px;
+
+  object-fit: cover;
+  border-radius: 14px;
+
+  transition: transform 0.25s ease;
+  cursor: pointer;
+}
+
+.file-preview:hover {
+  transform: scale(1.9);
+  z-index: 5;
 }
 
 .site-footer {
@@ -912,5 +1055,40 @@ textarea {
 
   .order-card {
     width: 100%;
+  }
+}
+
+.custom-modal-content {
+  max-width: 1050px;
+  text-align: left;
+}
+
+.custom-modal-content h3 {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.custom-form-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.field-note {
+  margin-top: -4px;
+  font-family: Arial, sans-serif;
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--muted);
+}
+
+@media (max-width: 900px) {
+  .custom-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .custom-modal-content {
+    max-height: 88vh;
+    overflow-y: auto;
   }
 }
