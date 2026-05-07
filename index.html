@@ -68,35 +68,96 @@
     </section>
 
  
-    <section id="gallery" class="section">
-      <div class="section-heading">
-        <p class="eyebrow">FEATURED DESIGNS</p>
-        <h2>Gallery</h2>
-      </div>
+  <section id="gallery" class="section">
+  <div class="section-heading">
+    <p class="eyebrow">FEATURED DESIGNS</p>
+    <h2>Gallery</h2>
+  </div>
 
-      <div class="gallery-grid">
-        <article class="gallery-item">
-          <img src="images/gallery-1.jpg" alt="Custom bouquet example" />
+  <div class="gallery-grid">
+
+    <article class="gallery-item">
+      <img src="images/gallery-1.jpg" alt="Custom bouquet example" />
+
+      <div class="gallery-item-content">
+        <div class="gallery-item-text">
           <h4>Blushing Peony</h4>
           <p>$175</p>
-        </article>
-        <article class="gallery-item">
-          <img src="images/gallery-2.jpg" alt="Corsage example" />
+        </div>
+
+        <button
+          class="btn btn-primary add-to-cart-button"
+          data-name="Blushing Peony"
+          data-price="$175"
+          data-image="images/gallery-1.jpg"
+        >
+          Add to Cart
+        </button>
+      </div>
+    </article>
+
+    <article class="gallery-item">
+      <img src="images/gallery-2.jpg" alt="Corsage example" />
+
+      <div class="gallery-item-content">
+        <div class="gallery-item-text">
           <h4>Peachy Spring</h4>
           <p>$65</p>
-        </article>
-        <article class="gallery-item">
-          <img src="images/gallery-3.jpg" alt="Boutonnière example" />
-          <h4>Pretting in Pink</h4>
+        </div>
+
+        <button
+          class="btn btn-primary add-to-cart-button"
+          data-name="Peachy Spring"
+          data-price="$65"
+          data-image="images/gallery-2.jpg"
+        >
+          Add to Cart
+        </button>
+      </div>
+    </article>
+
+    <article class="gallery-item">
+      <img src="images/gallery-3.jpg" alt="Boutonnière example" />
+
+      <div class="gallery-item-content">
+        <div class="gallery-item-text">
+          <h4>Pretty in Pink</h4>
           <p>$100</p>
-        </article>
-        <article class="gallery-item">
-          <img src="images/gallery-4.jpg" alt="Event flowers example" />
+        </div>
+
+        <button
+          class="btn btn-primary add-to-cart-button"
+          data-name="Pretty in Pink"
+          data-price="$100"
+          data-image="images/gallery-3.jpg"
+        >
+          Add to Cart
+        </button>
+      </div>
+    </article>
+
+    <article class="gallery-item">
+      <img src="images/gallery-4.jpg" alt="Event flowers example" />
+
+      <div class="gallery-item-content">
+        <div class="gallery-item-text">
           <h4>Designer's Choice</h4>
           <p>$125</p>
-        </article>
+        </div>
+
+        <button
+          class="btn btn-primary add-to-cart-button"
+          data-name="Designer's Choice"
+          data-price="$125"
+          data-image="images/gallery-4.jpg"
+        >
+          Add to Cart
+        </button>
       </div>
-    </section>
+    </article>
+
+  </div>
+</section>  
 
     <section id="order-options" class="section soft-section">
   <div class="section-heading">
@@ -196,9 +257,11 @@
         Estimated Floral Investment
         <input type="text" name="estimated-investment" placeholder="$" />
       </label>
-
+<!-- 
       <label>
         Upload Inspiration Photos
+
+      
         <div class="file-upload-box">
           <input 
             type="file" 
@@ -209,8 +272,8 @@
           />
           <span>Choose files to upload</span>
           <small>PNG, JPG, or WEBP. Multiple files allowed.</small>
-        </div>
-      </label>
+        </div> 
+      </label> -->
 
       <div id="fileList" class="file-list"></div>
 
@@ -354,6 +417,71 @@
     </form>
   </div>
 </div>
+
+<div id="cartModal" class="modal"> 
+    <div class="modal-content cart-modal-content">
+      <button class="modal-close" id="closeCartModal">&times;</button>
+
+      <h3>Your Flower Cart</h3>
+
+      <div id="cartItems" class="cart-items"></div>
+
+      <form 
+        class="cart-request-form"
+        action="https://formspree.io/f/mvzlpdjd"
+        method="POST"
+      >
+        <input type="hidden" name="cart-items" id="cartItemsInput" />
+        <input type="hidden" name="_subject" value="New Ready-to-Order Cart Request 🌸">
+
+        <div class="form-row">
+          <label>
+            Name
+            <input type="text" name="name" placeholder="Your name" required autocomplete="name" />
+          </label>
+
+          <label>
+            Phone, email, or Instagram
+            <input type="text" name="contact" placeholder="Phone, email, or @username" required />
+          </label>
+        </div>
+
+        <div class="form-row">
+          <label>
+            Date needed
+            <input type="date" name="date-needed" required />
+          </label>
+
+          <label>
+            Pickup or delivery
+            <select name="delivery">
+              <option>Pickup</option>
+              <option>Delivery</option>
+              <option>Not sure yet</option>
+            </select>
+          </label>
+        </div>
+
+        <label>
+          Notes
+          <textarea name="message" rows="4" placeholder="Any color changes, ribbon preference, delivery address, or details?"></textarea>
+        </label>
+
+        <p class="cart-note">
+          Submitting this request does not confirm payment or availability. Wrapped With Love will contact you to finalize details.
+        </p>
+
+        <button type="submit" class="btn btn-primary full-submit-button">
+          Send Order Request
+        </button>
+      </form>
+    </div>
+  </div>
+
+<button class="floating-cart-button cart-open-button">
+   View Cart
+  <span id="cartCount">0</span>
+</button>
 
  <script src="script.js"></script>
 </body>

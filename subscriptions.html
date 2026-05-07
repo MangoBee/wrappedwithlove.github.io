@@ -40,7 +40,7 @@
           Choose a subscription plan for recurring floral arrangements made for your home,
           office, or someone special.
         </p>
-        <a href="#subscription-request" class="btn btn-primary">Request a Subscription</a>
+    
       </div>
     </section>
 
@@ -52,39 +52,41 @@
 
       <div class="subscription-plans">
         <article class="subscription-card">
-          <p class="plan-label">Petite</p>
-          <h3>$XX / month</h3>
-          <p>Small seasonal arrangement, perfect for desks, bedrooms, or thoughtful gifts.</p>
+          <p class="plan-label">Standard Plan</p>
+          <h3>$55 / month</h3>
+          <p>Enchance your space with tranquility and joy with a simple, yet beautifully crafted arrangment of fresh, seasonal flowers.</p>
           <ul>
-            <li>Small arrangement</li>
-            <li>Seasonal flowers</li>
-            <li>Monthly pickup or delivery</li>
+            <li>Local Delivery</li>
+            <li>Standard Vases</li>
+            <li>Seasonal Blooms</li>
           </ul>
-        <a href="#subscription-request" class="btn btn-primary plan-button" data-plan="Petite">Choose Petite</a>
+<a href="#subscription-request" class="btn btn-primary plan-button" data-plan="Standard">
+  Choose Standard
+</a>
         </article>
 
         <article class="subscription-card">
-          <p class="plan-label">Classic</p>
-          <h3>$XX / month</h3>
-          <p>Medium arrangement with fuller blooms, great for homes and offices.</p>
+          <p class="plan-label">Deluxe Plan</p>
+          <h3>$75 / month</h3>
+          <p>Expirence the beuaty of a medium-sized arrangement that delivers an abundance of fullness and a delightful variety of stunning blooms.</p>
           <ul>
-            <li>Medium arrangement</li>
-            <li>Seasonal color palette</li>
-            <li>Monthly pickup or delivery</li>
+            <li>Local Delivery</li>
+            <li>Medium Vases</li>
+            <li>Seasonal Blooms</li>
           </ul>
-          <a href="#subscription-request" class="btn btn-primary plan-button" data-plan="Classic">Choose Classic</a>
+          <a href="#subscription-request" class="btn btn-primary plan-button" data-plan="Deluxe">Choose Deluxe</a>
         </article>
 
         <article class="subscription-card">
-          <p class="plan-label">Luxe</p>
-          <h3>$XX / month</h3>
-          <p>Premium arrangement with larger blooms and a fuller statement design.</p>
+          <p class="plan-label">Premium Plan</p>
+          <h3>$95 / month</h3>
+          <p>Enjoy an impressive, breathtaking arrangement featuring the specialty and seasonal blooms.</p>
           <ul>
-            <li>Large arrangement</li>
-            <li>Premium flower selection</li>
-            <li>Monthly pickup or delivery</li>
+            <li>Local Delivery</li>
+            <li>Customized and/or Seasonal blooms</li>
+            <li>Large Specialty Vases</li>
           </ul>
-          <a href="#subscription-request" class="btn btn-primary plan-button" data-plan="Luxe">Choose Luxe</a>
+          <a href="#subscription-request" class="btn btn-primary plan-button" data-plan="Premium">Choose Premium</a>
         </article>
       </div>
     </section>
@@ -147,38 +149,47 @@
             <input type="tel" name="phone" placeholder="Phone number" autocomplete="tel" />
           </label>
 
-          <label>
-            Preferred plan
-            <select name="plan" required>
-              <option value="">Select one</option>
-              <option>Petite</option>
-              <option>Classic</option>
-              <option>Luxe</option>
-              <option>Not sure yet</option>
-            </select>
-          </label>
+       <label>
+  Preferred plan
+  <select name="plan" id="subscriptionPlan" required>
+    <option value="">Select one</option>
+    <option value="Standard">Standard</option>
+    <option value="Deluxe">Deluxe</option>
+    <option value="Premium">Premium</option>
+  </select>
+</label>
+
+          
+
+          
         </div>
 
-        <label>
-          Delivery address
-          <input type="text" name="address" placeholder="Street, city, state, ZIP" autocomplete="street-address" />
-        </label>
+      
 
         <div class="form-row">
+          
+        
+          
           <label>
             Preferred start date
             <input type="date" name="start-date" />
           </label>
 
-          <label>
-            Pickup or delivery
-            <select name="delivery">
-              <option>Pickup</option>
-              <option>Delivery</option>
-              <option>Not sure yet</option>
-            </select>
-          </label>
+            <label>
+  Length of Subscription
+  <select name="subscription-length" id="subscriptionLength" required disabled>
+    <option value="">Select a plan first</option>
+  </select>
+</label>
+
+           
         </div>
+
+         <label>
+          Delivery address
+          <input type="text" name="address" placeholder="Street, city, state, ZIP" autocomplete="street-address" />
+        </label>
+  
 
         <label>
           Colors, style, and notes
@@ -289,6 +300,71 @@
     </form>
   </div>
 </div>
+
+<button class="floating-cart-button cart-open-button">
+   View Cart
+  <span id="cartCount">0</span>
+</button>
+
+<div id="cartModal" class="modal"> 
+    <div class="modal-content cart-modal-content">
+      <button class="modal-close" id="closeCartModal">&times;</button>
+
+      <h3>Your Flower Cart</h3>
+
+      <div id="cartItems" class="cart-items"></div>
+
+      <form 
+        class="cart-request-form"
+        action="https://formspree.io/f/mvzlpdjd"
+        method="POST"
+      >
+        <input type="hidden" name="cart-items" id="cartItemsInput" />
+        <input type="hidden" name="_subject" value="New Ready-to-Order Cart Request 🌸">
+
+        <div class="form-row">
+          <label>
+            Name
+            <input type="text" name="name" placeholder="Your name" required autocomplete="name" />
+          </label>
+
+          <label>
+            Phone, email, or Instagram
+            <input type="text" name="contact" placeholder="Phone, email, or @username" required />
+          </label>
+        </div>
+
+        <div class="form-row">
+          <label>
+            Date needed
+            <input type="date" name="date-needed" required />
+          </label>
+
+          <label>
+            Pickup or delivery
+            <select name="delivery">
+              <option>Pickup</option>
+              <option>Delivery</option>
+              <option>Not sure yet</option>
+            </select>
+          </label>
+        </div>
+
+        <label>
+          Notes
+          <textarea name="message" rows="4" placeholder="Any color changes, ribbon preference, delivery address, or details?"></textarea>
+        </label>
+
+        <p class="cart-note">
+          Submitting this request does not confirm payment or availability. Wrapped With Love will contact you to finalize details.
+        </p>
+
+        <button type="submit" class="btn btn-primary full-submit-button">
+          Send Order Request
+        </button>
+      </form>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
