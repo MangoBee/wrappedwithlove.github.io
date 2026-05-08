@@ -28,8 +28,7 @@ const heroImages = [
   "images/hero-bouquet-1.jpg",
   "images/hero-bouquet-2.jpg",
   "images/hero-bouquet-3.jpg",
-  "images/hero-bouquet-4.jpg",
-  "images/hero-bouquet-5.jpg",
+
 ];
 
 const heroSliderImage = document.querySelector("#heroSliderImage");
@@ -56,7 +55,7 @@ function startSliderTimer() {
 
   sliderTimer = setInterval(() => {
     showHeroImage(currentHeroImage + 1);
-  }, 10000);
+  }, 15000);
 }
 
 if (heroSliderImage && previousZone && nextZone) {
