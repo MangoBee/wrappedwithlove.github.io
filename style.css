@@ -183,6 +183,8 @@ h3 {
   background: var(--sage);
   color: var(--white);
   box-shadow: 0 12px 28px rgba(95, 104, 79, 0.18);
+  width: 100%;
+  justify-content: center;
 }
 
 .btn-secondary {
@@ -1555,3 +1557,4 @@ height: 64px;
   margin-top: auto;
   align-self: center;
 }
+
