@@ -1558,3 +1558,12 @@ height: 64px;
   align-self: center;
 }
 
+.site-nav a {
+  white-space: nowrap;
+}
+
+.site-nav {
+  gap: clamp(14px, 2vw, 26px);
+  font-size: clamp(0.85rem, 1vw, 1rem);
+}
+
